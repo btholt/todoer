@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 import { UserButton } from "@stackframe/stack";
 import { getTodos, getLabels } from "@/lib/db";
 import { TodoList } from "@/components/todos/todo-list";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default async function Dashboard() {
   const user = await stackServerApp.getUser();
@@ -25,7 +26,10 @@ export default async function Dashboard() {
             Welcome back, {user.displayName || user.primaryEmail}!
           </p>
         </div>
-        <UserButton />
+        <div className="flex items-center gap-4">
+          <ThemeToggle />
+          <UserButton />
+        </div>
       </div>
       
       <TodoList initialTodos={todos} labels={labels} />
