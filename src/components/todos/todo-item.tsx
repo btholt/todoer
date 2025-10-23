@@ -65,11 +65,11 @@ export function TodoItem({ todo, onToggleComplete, onDelete }: TodoItemProps) {
               {todo.label_name && (
                 <Badge
                   variant="secondary"
-                  className="text-xs"
+                  className="text-xs dark:opacity-90"
                   style={{
-                    backgroundColor: todo.label_color + '20',
+                    backgroundColor: todo.label_color + '30',
                     color: todo.label_color,
-                    borderColor: todo.label_color + '40',
+                    borderColor: todo.label_color + '50',
                   }}
                 >
                   {todo.label_name}
